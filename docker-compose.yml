@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  doc:
+    build:
+      context: './doc'
+    image: tesh/procon4-doc
+    volumes:
+      - './doc:/doc'
+      - '/doc/node_modules'
+    ports:
+      - '4321:4321'
+    command: ['yarn', 'dev']

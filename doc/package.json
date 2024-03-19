@@ -1,0 +1,15 @@
+{
+  "name": "proto-ice",
+  "type": "module",
+  "version": "0.0.1",
+  "license": "MIT",
+  "scripts": {
+    "dev": "yarn run astro dev --host",
+    "start": "yarn run astro dev",
+    "build": "yarn run astro build",
+    "preview": "yarn run astro preview"
+  },
+  "dependencies": {
+    "astro": "^4.5.6"
+  }
+}
