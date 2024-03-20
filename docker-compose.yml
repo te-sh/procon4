@@ -4,17 +4,20 @@ services:
   code:
     build:
       context: './code'
-    image: tesh/procon-code
+    image: tesh/procon4-code
     container_name: procod
     volumes:
       - './code:/code'
+    init: true
+    command: ['sleep', 'infinity']
   judge:
     build:
       context: './judge'
-    image: tesh/procon-judge
+    image: tesh/procon4-judge
     container_name: projdg
     volumes:
       - './judge:/judge'
+      - './code:/code'
       - '/var/run/docker.sock:/var/run/docker.sock'
     command: ['./startup.sh']
   doc:
