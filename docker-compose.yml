@@ -1,12 +1,30 @@
 version: '3'
 
 services:
+  code:
+    build:
+      context: './code'
+    image: tesh/procon-code
+    container_name: procod
+    volumes:
+      - './code:/code'
+  judge:
+    build:
+      context: './judge'
+    image: tesh/procon-judge
+    container_name: projdg
+    volumes:
+      - './judge:/judge'
+      - '/var/run/docker.sock:/var/run/docker.sock'
+    command: ['./startup.sh']
   doc:
     build:
       context: './doc'
     image: tesh/procon4-doc
+    container_name: prodoc
     volumes:
       - './doc:/doc'
+      - './code:/code'
       - '/doc/node_modules'
     ports:
       - '4321:4321'
