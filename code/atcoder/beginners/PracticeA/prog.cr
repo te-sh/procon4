@@ -1,4 +1,4 @@
-# URL: https://atcoder.jp/contests/practice/tasks/practice_1
+# URL: https://atcoder.jp/contests/abs/tasks/practice_1
 
 def solve(io)
   a = io.get(Int32)
