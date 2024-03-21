@@ -4,5 +4,7 @@
 			"path": "."
 		}
 	],
-	"settings": {}
+	"settings": {
+		"crystal-lang.compiler": "/home/shigi/.asdf/shims/crystal"
+	}
 }
