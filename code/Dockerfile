@@ -22,7 +22,7 @@ RUN apt-get update \
 WORKDIR /root
 ENV ASDF_DIR=/root/.asdf
 
-COPY install.sh ./
+COPY script/install.sh ./
 
 RUN git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.14.0 \
  && echo '. "$HOME/.asdf/asdf.sh"' >> .bashrc \

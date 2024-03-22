@@ -102,7 +102,7 @@ class RunnerCrystal:
     def compile(self):
         print('--- compile')
         print(f'crystal build -o a.out {self.path.name}')
-        subprocess.run(['sudo', 'docker', 'exec', 'procod', '/code/compile.sh', self.path], check=True)
+        subprocess.run(['sudo', 'docker', 'exec', 'procod', '/code/script/compile.sh', self.path], check=True)
 
     def test(self):
         print('--- test')
