@@ -4,6 +4,4 @@ title: "AtCoder"
 ---
 # ABC
 
-|||
-|------|----|
-|ABC346|A問題|
+* [ABC03](atcoder/ABC03)
