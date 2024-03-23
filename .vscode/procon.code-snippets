@@ -25,7 +25,7 @@
 			"$2",
 			"end",
 			"",
-			"require \"procon/io\"",
+			"require \"procon\"",
 			"",
 			"solve(ProconIO.new)"
 		]
