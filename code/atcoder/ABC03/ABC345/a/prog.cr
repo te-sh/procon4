@@ -5,6 +5,6 @@ def solve(io)
   io.put /^<=+>$/ =~ s ? "Yes" : "No"
 end
 
-require "procon/io"
+require "procon"
 
 solve(ProconIO.new)
