@@ -1,3 +1,4 @@
+# :::::::::::::::::::: procon/ext/array
 #
 # Array を拡張します
 #
@@ -28,3 +29,4 @@ class Array
     {% end %}
   end
 end
+# ::::::::::::::::::::
