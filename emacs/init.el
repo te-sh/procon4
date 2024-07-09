@@ -2,9 +2,14 @@
 (add-to-list 'safe-local-variable-values
              '(flycheck-crystal-build-executable . "/home/shigi/projects/procon4/code/script/compile-with-lib.sh"))
 
-;; copy for submit for crystal
+;; set procon-dir
 (setq procon-dir (file-truename (file-name-directory load-file-name)))
 
+;; yasnippet
+(add-to-list 'yas-snippet-dirs (expand-file-name "snippets" procon-dir))
+(yas-reload-all)
+
+;; copy for submit for crystal
 (defun procon-copy-for-submit-crystal ()
   (interactive)
   (let ((orig-buffer (current-buffer))
