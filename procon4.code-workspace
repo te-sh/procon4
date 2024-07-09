@@ -5,8 +5,6 @@
 		}
 	],
 	"settings": {
-		"crystal-lang.compiler": "/home/shigi/projects/procon4/code/script/vs-compile.sh",
-		"crystal-lang.dependencies": false,
-		"crystal-lang.flags": "-I/home/shigi/projects/procon4/code/lib"
+		"crystal-lang.compiler": "/home/shigi/projects/procon4/code/script/compile-with-lib.sh"
 	}
 }
