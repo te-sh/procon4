@@ -1,9 +1,5 @@
 ---
-interface Props {
-	title: string;
-}
-
-const { title } = Astro.props;
+const { content } = Astro.props;
 ---
 
 <!doctype html>
@@ -15,7 +11,7 @@ const { title } = Astro.props;
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css" integrity="sha384-Xi8rHCmBmhbuyyhbI88391ZKP2dmfnOl4rT9ZfRI7mLTdk1wblIUnrIq35nqwEvC" crossorigin="anonymous">
-		<title>{title}</title>
+		<title>{content.title}</title>
 	</head>
 	<body>
         <nav class="flex items-center justify-between flex-wrap bg-blue-300 p-6">
@@ -24,7 +20,11 @@ const { title } = Astro.props;
             </div>
         </nav>
 		<div class="container max-w-screen-lg mx-auto">
-			<article class="prose max-w-screen-lg mt-4">
+			<article class="prose prose-code:before:content-none prose-code:after:content-none max-w-screen-lg mt-4">
+				<div class="flex justify-between">
+					<h1 class="mb-0">{content.title}</h1>
+					<div><a href={content.problem}>問題</a></div>
+				</div>
 				<slot/>
 			</article>
 		</div>

@@ -1,7 +1,6 @@
 ---
-layout: ../../../../../layouts/Procon.astro
+layout: ../../../../../layouts/Content.astro
 title: "ABC345 A"
+problem: https://atcoder.jp/contests/abc345/tasks/abc345_a
 ---
-# ABC 345 A
-
 正規表現 `<=+>` で判定する.

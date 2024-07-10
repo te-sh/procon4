@@ -1,9 +1,8 @@
 ---
-layout: ../../../../../layouts/Procon.astro
+layout: ../../../../../layouts/Content.astro
 title: "ABC345 C"
+problem: https://atcoder.jp/contests/abc345/tasks/abc345_c
 ---
-# ABC 345 C
-
 $n$ 文字目を見たとき, その文字より前で $n$ 文字目と違う文字と交換すれば異なる文字列を作ることができる.
 
 前から文字列を見て, 出てくる文字をカウントしていくことでこれを実現できる.
