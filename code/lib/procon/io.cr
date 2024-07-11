@@ -161,11 +161,11 @@ class ProconIO
   #
   def put_d(*v, delimiter)
     v.each_with_index do |vi, i|
+      @outs.print delimiter if i > 0
       vi.each_with_index do |vij, j|
+        @outs.print delimiter if j > 0
         @outs.print vij
-        @outs.print delimiter if j < vi.size - 1
       end
-      @outs.print delimiter if i < v.size - 1
     end
     @outs.puts
   end
