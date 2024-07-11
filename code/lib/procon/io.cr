@@ -84,7 +84,7 @@ class ProconIO
   #
   macro define_get_c
     {% for i in (2..9) %}
-      def get_c(n : Int, {{ *(1..i).map { |j| "k#{j}".id } }})
+      def get{{i}}_c(n : Int, {{ *(1..i).map { |j| "k#{j}".id } }})
         a = get_t(n, {{ *(1..i).map { |j| "k#{j}".id } }})
         { {{ *(1..i).map { |j| "a.map { |e| e[#{j-1}] }".id } }} }
       end
