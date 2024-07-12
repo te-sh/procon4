@@ -9,6 +9,16 @@ export default defineConfig({
   integrations: [tailwind()],
   markdown: {
     remarkPlugins: [remarkMath],
-    rehypePlugins: [rehypeKatex],
+    rehypePlugins: [
+      [
+        rehypeKatex, {
+          macros: {
+            "\\abs": "\\left|#1\\right|",
+            "\\perm": "{}_{#1}P_{#2}",
+            "\\comb": "{}_{#1}C_{#2}"
+          }
+        }
+      ]
+    ],
   },
 });
