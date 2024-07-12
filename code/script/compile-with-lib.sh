@@ -13,6 +13,5 @@ do
     fi
 done
 
-echo "start"
 cd $DIR
 CRYSTAL_PATH=`crystal env CRYSTAL_PATH`:$LIB crystal ${ARGS[@]}
