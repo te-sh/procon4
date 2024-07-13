@@ -35,6 +35,6 @@ def solve(io)
 end
 
 require "procon"
-require "procon/data-structure/linked-list"
+require "procon/data_structure/linked_list"
 
 solve(ProconIO.new)

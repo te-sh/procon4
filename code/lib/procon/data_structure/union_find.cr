@@ -1,4 +1,4 @@
-# :::::::::::::::::::: procon/data-structure/union-find
+# :::::::::::::::::::: procon/data_structure/union-find
 #
 # Union-Find を表します
 #

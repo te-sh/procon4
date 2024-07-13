@@ -1,4 +1,4 @@
-# :::::::::::::::::::: procon/data-structure/linked-list
+# :::::::::::::::::::: procon/data_structure/linked_list
 #
 # 双方向の LinkedList を表します
 #
