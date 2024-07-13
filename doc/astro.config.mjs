@@ -14,6 +14,7 @@ export default defineConfig({
         rehypeKatex, {
           macros: {
             "\\abs": "\\left|#1\\right|",
+            "\\lcm": "\\rm{lcm}",
             "\\perm": "{}_{#1}P_{#2}",
             "\\comb": "{}_{#1}C_{#2}",
             "\\floor": "\\left\\lfloor #1 \\right\\rfloor",
