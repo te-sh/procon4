@@ -3,7 +3,7 @@ layout: ../../../../../layouts/Content.astro
 title: "ABC340 E"
 problem: https://atcoder.jp/contests/abc340/tasks/abc340_e
 ---
-imos 法を使う.
+遅延セグメントツリーを使う.
 
 各操作では以下の作業を行う.
 
