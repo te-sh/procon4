@@ -14,4 +14,5 @@ do
 done
 
 cd $DIR
-CRYSTAL_PATH=`crystal env CRYSTAL_PATH`:$LIB crystal ${ARGS[@]}
+export CRYSTAL_PATH=`crystal env CRYSTAL_PATH`:$LIB
+exec crystal ${ARGS[@]}

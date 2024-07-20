@@ -7,6 +7,10 @@
 	"settings": {
 		"crystal-lang.compiler": "/home/shigi/projects/procon4/code/script/compile-with-lib.sh",
 		"crystal-lang.problems": true,
-		"crystal-lang.dependencies": false
+		"crystal-lang.dependencies": false,
+		"crystal-lang.server": "/home/shigi/projects/procon4/code/script/crystalline-with-lib.sh",
+		"crystal-lang.server-env": {
+			"SOURCE_DIR": "atcoder"
+		}
 	}
 }
