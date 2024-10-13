@@ -1,13 +1,13 @@
-const vscode = require('vscode');
-const fs = require('fs');
+import vscode from 'vscode';
+import fs from 'fs';
 
 /**
  * @param {vscode.ExtensionContext} context
  */
-function activate(context) {
+export const activate = (context) => {
 	console.log('Congratulations, your extension "procon" is now active!');
 
-	let disposable = vscode.commands.registerCommand('procon.copy', function () {
+	let disposable = vscode.commands.registerCommand('procon.copy', () => {
 		const workspaceDir = vscode.workspace.workspaceFolders[0].uri.path;
 		const libDir = workspaceDir + '/code/lib';
 
@@ -15,12 +15,12 @@ function activate(context) {
 		if (!editor) {
 			return;
 		}
-		
+
 		const document = editor.document;
 		const text = document.getText();
 		const lines = text.split('\n');
 
-		const set = new Set()
+		const set = new Set();
 
 		for (;;) {
 			let hit = false;
@@ -38,7 +38,7 @@ function activate(context) {
 				hit = true;
 
 				if (set.has(file)) {
-					lines.splice(index, 1)
+					lines.splice(index, 1);
 					return false;
 				}
 				set.add(file);
@@ -48,7 +48,7 @@ function activate(context) {
 					return !libLine.match(/^\s*#/);
 				});
 				if (libLines[libLines.length - 1] == '\n') {
-					libLines.pop()
+					libLines.pop();
 				}
 
 				lines.splice(index, 1, ...libLines);
@@ -64,11 +64,6 @@ function activate(context) {
 	});
 
 	context.subscriptions.push(disposable);
-}
+};
 
-function deactivate() {}
-
-module.exports = {
-	activate,
-	deactivate
-}
+export const deactivate = () => {};
