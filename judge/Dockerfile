@@ -34,4 +34,4 @@ USER appuser
 ENV PATH $PATH:/home/appuser/.local/bin
 
 RUN pip install --upgrade pip \
- && pip install online-judge-tools termcolor watchdog
+ && pip install online-judge-tools termcolor watchdog setuptools
