@@ -57,7 +57,7 @@ export function activate(context: vscode.ExtensionContext) {
 			}
 		}
 
-		const out = lines.join('\n');
+		const out = lines.join('\n').replaceAll(/\n{3,}/g, '\n\n');
 		vscode.env.clipboard.writeText(out);
 	});
 
