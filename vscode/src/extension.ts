@@ -1,26 +1,67 @@
-// The module 'vscode' contains the VS Code extensibility API
-// Import the module and reference it with the alias vscode in your code below
 import * as vscode from 'vscode';
+import * as fs from 'fs';
 
-// This method is called when your extension is activated
-// Your extension is activated the very first time the command is executed
 export function activate(context: vscode.ExtensionContext) {
-
-	// Use the console to output diagnostic information (console.log) and errors (console.error)
-	// This line of code will only be executed once when your extension is activated
 	console.log('Congratulations, your extension "procon" is now active!');
 
-	// The command has been defined in the package.json file
-	// Now provide the implementation of the command with registerCommand
-	// The commandId parameter must match the command field in package.json
-	const disposable = vscode.commands.registerCommand('procon.helloWorld', () => {
-		// The code you place here will be executed every time your command is executed
-		// Display a message box to the user
-		vscode.window.showInformationMessage('Hello World from procon!');
+	let disposable = vscode.commands.registerCommand('procon.copy', () => {
+		const workspaceDir = vscode.workspace.workspaceFolders![0].uri.path;
+		const libDir = workspaceDir + '/code/lib';
+
+		const editor = vscode.window.activeTextEditor;
+		if (!editor) {
+			return;
+		}
+
+		const document = editor.document;
+		const text = document.getText();
+		const lines = text.split('\n');
+
+		const set = new Set();
+
+		for (;;) {
+			let hit = false;
+			lines.some((line, index) => {
+				const m = line.match(/^require "(.*)"/);
+				if (!m) {
+					return false;
+				}
+
+				const file = m[1];
+				if (!file.startsWith('procon')) {
+					return false;
+				}
+
+				hit = true;
+
+				if (set.has(file)) {
+					lines.splice(index, 1);
+					return false;
+				}
+				set.add(file);
+
+				const lib = fs.readFileSync(libDir + '/' + file + '.cr', 'utf-8');
+				const libLines = lib.split('\n').filter((libLine) => {
+					return !libLine.match(/^\s*#/);
+				});
+				if (libLines[libLines.length - 1] === '\n') {
+					libLines.pop();
+				}
+
+				lines.splice(index, 1, ...libLines);
+				return true;
+			});
+
+			if (!hit) {
+				break;
+			}
+		}
+
+		const out = lines.join('\n');
+		vscode.env.clipboard.writeText(out);
 	});
 
 	context.subscriptions.push(disposable);
 }
 
-// This method is called when your extension is deactivated
 export function deactivate() {}

@@ -19,8 +19,8 @@
   "contributes": {
     "commands": [
       {
-        "command": "procon.helloWorld",
-        "title": "Hello World"
+        "command": "procon.copy",
+        "title": "Copy procon code"
       }
     ]
   },
