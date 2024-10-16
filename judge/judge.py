@@ -60,11 +60,13 @@ class JudgeRunner:
             return
 
         try:
+            runner = self.get_runner()
+            runner.compile()
+
             if self.url_memo.changed(url):
                 self.download(url)
                 self.url_memo.write(url)
-            runner = self.get_runner()
-            runner.compile()
+
             runner.test()
             self.run_time_memo.write()
 
