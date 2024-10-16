@@ -1,6 +1,6 @@
 ---
 layout: ../../../../../layouts/Content.astro
-title: "ABC339 E"
+title: "ABC338 E"
 problem: https://atcoder.jp/contests/abc338/tasks/abc338_e
 ---
 $A_i \gt B_i$ ならば $A_i$ と $B_i$ は入れ替える.

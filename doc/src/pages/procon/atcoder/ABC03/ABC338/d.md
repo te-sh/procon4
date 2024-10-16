@@ -1,6 +1,6 @@
 ---
 layout: ../../../../../layouts/Content.astro
-title: "ABC339 D"
+title: "ABC338 D"
 problem: https://atcoder.jp/contests/abc338/tasks/abc338_d
 ---
 まずは橋が全部有効な状態でのツアーの長さを考える.
