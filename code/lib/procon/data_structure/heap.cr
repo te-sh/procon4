@@ -70,7 +70,7 @@ class Heap(T)
     @b[1], i = v, 1
     while @b.size > i << 1
       l, r = i << 1, i << 1 | 1
-	  j = @b.size <= r || @cmp.call(@b[l], @b[r]) < 0 ? l : r
+      j = @b.size <= r || @cmp.call(@b[l], @b[r]) < 0 ? l : r
       break if @cmp.call(@b[i], @b[j]) < 0
       @b[j], @b[i] = @b[i], @b[j]
       i = j
