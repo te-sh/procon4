@@ -1,5 +1,5 @@
 # :::::::::::::::::::: procon/graph/dijkstra
-require "procon/graph/graph"
+require "procon/graph/graph_w"
 require "procon/data_structure/heap"
 
 #
