@@ -14,6 +14,13 @@ macro max_u(a, b)
 end
 
 #
+# a/b を小数点以下切り上げで求めます
+#
+macro cdiv(a, b)
+  ({{(a)}} + {{(b)}} - 1) // {{(b)}}
+end
+
+#
 # タプルの配列を record の配列に変換します
 #
 macro records(rec, a)

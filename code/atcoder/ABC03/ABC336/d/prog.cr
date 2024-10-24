@@ -18,7 +18,7 @@ def solve(io)
 
   m = 0
   (0...n).each do |i|
-    mk = {x[i], (n-i).cdiv(2)}.min
+    mk = {x[i], cdiv(n-i, 2)}.min
     k = (1..mk).bsearch { |j| y[i+j*2-2] < j }
     max_u(m, k.nil? ? mk : k-1)
   end
