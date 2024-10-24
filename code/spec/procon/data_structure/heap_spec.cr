@@ -27,7 +27,7 @@ module HeapSpec
 
     describe "#push" do
       h = Heap(Int32).new
-      it {
+      it do
         h.push(2)
         h.empty?.should be_false
         h.size.should eq 1
@@ -42,12 +42,12 @@ module HeapSpec
         h.empty?.should be_false
         h.size.should eq 3
         h.first.should eq 1
-      }
+      end
     end
 
     describe "#pop" do
       h = Heap(Int32).new([2, 3, 1])
-      it {
+      it do
         h.pop.should eq 1
         h.empty?.should be_false
         h.size.should eq 2
@@ -60,7 +60,7 @@ module HeapSpec
 
         h.pop.should eq 3
         h.empty?.should be_true
-      }
+      end
     end
   end
 end

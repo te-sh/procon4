@@ -37,25 +37,5 @@ class Graph
     @g[u] << v
     @g[v] << u
   end
-
-  #
-  # 頂点 u から BFS で頂点を列挙します
-  # ブロックには {見付けた頂点, その前の頂点} の Tuple を渡します
-  #
-  def bfs(u : Node)
-    b = Array.new(@size, false)
-    yield u, -1
-    b[u] = true
-    q = Deque{u}
-    until q.empty?
-      v = q.shift
-      @g[v].each do |w|
-        next if b[w]
-        yield w, v
-        b[w] = true
-        q.push(w)
-      end
-    end
-  end
 end
 # ::::::::::::::::::::

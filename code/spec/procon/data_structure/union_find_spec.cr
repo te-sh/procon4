@@ -5,7 +5,7 @@ module UnionFindSpec
   describe UnionFind do
     uf = UnionFind.new(6)
 
-    it {
+    it do
       uf.count_forests.should eq 6
 
       uf.unite(0, 1)
@@ -19,6 +19,6 @@ module UnionFindSpec
       uf.same?(0, 2).should be_true
       uf.count_forests.should eq 4
       uf.count_nodes(1).should eq 3
-    }
+    end
   end
 end
