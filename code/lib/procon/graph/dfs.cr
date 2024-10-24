@@ -1,10 +1,10 @@
-# :::::::::::::::::::: procon/graph/bfs
+# :::::::::::::::::::: procon/graph/dfs
 require "procon/graph/graph"
 
 #
 # BFS を行う構造体です
 #
-class Bfs
+class Dfs
   alias Node = Graph::Node
 
   #
@@ -14,14 +14,14 @@ class Bfs
   end
 
   #
-  # 頂点 u から BFS で頂点を列挙する Enumerator を返します
+  # 頂点 u から DFS で頂点を列挙する Enumerator を返します
   #
   def run(u : Node)
     Enumerator.new(@g, u)
   end
 
   #
-  # BFS の経過を保持する Enumerator です
+  # DFS の経過を保持する Enumerator です
   #
   class Enumerator
     alias Node = Graph::Node
@@ -36,7 +36,7 @@ class Bfs
     end
 
     #
-    # 頂点 u から BFS で頂点を列挙します
+    # 頂点 u から DFS で頂点を列挙します
     # ブロックには {見付けた頂点, その前の頂点} の Tuple を渡します
     #
     def each(&)
@@ -44,7 +44,7 @@ class Bfs
       q = Deque{NodePair.new(@u, -1)}
       b[@u] = true
       until q.empty?
-        v, u = q.shift
+        v, u = q.pop
         yield NodePair.new(v, u)
         @g[v].each do |w|
           next if b[w]
@@ -57,8 +57,8 @@ class Bfs
 end
 
 class Graph
-  def bfs(s : Node)
-    Bfs.new(self).run(s)
+  def dfs(s : Node)
+    Dfs.new(self).run(s)
   end
 end
 # ::::::::::::::::::::

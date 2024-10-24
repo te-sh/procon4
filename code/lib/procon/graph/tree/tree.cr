@@ -1,4 +1,4 @@
-# :::::::::::::::::::: lib/graph/tree
+# :::::::::::::::::::: lib/graph/tree/tree
 require "procon/graph/graph"
 
 #
@@ -77,7 +77,7 @@ class Tree
 end
 
 class Graph
-  def tree(root)
+  def tree(root : Node)
     Tree.new(self, root)
   end
 end

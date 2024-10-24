@@ -16,6 +16,6 @@ end
 
 require "procon"
 
-require "procon/graph/tree"
+require "procon/graph/tree/tree"
 
 solve(ProconIO.new)
