@@ -36,7 +36,6 @@ def solve(io)
 end
 
 require "procon"
-
 require "procon/data_structure/cumulative_sum"
 
 solve(ProconIO.new)

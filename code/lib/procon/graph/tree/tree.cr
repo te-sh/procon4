@@ -43,7 +43,7 @@ class Tree
 
       @g.dfs(@root).each do |u, p|
         @parent[u] = p
-        @children[p] << u if p != -1
+        @children[p] << u if u != @root
         @depth[u] = @depth[p] + 1
         @dfs_order << u
       end

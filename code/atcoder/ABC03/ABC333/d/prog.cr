@@ -15,7 +15,6 @@ def solve(io)
 end
 
 require "procon"
-
 require "procon/graph/tree/tree"
 
 solve(ProconIO.new)

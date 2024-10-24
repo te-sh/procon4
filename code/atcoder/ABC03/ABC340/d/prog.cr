@@ -12,7 +12,6 @@ def solve(io)
 end
 
 require "procon"
-
 require "procon/graph/dijkstra"
 
 solve(ProconIO.new)

@@ -51,11 +51,8 @@ end
 alias Mint = AtCoder::ModInt998244353
 
 require "procon"
-
 require "procon/md_array"
-
 require "atcoder/mod_int"
-
 require "atcoder/dsu"
 
 solve(ProconIO.new)

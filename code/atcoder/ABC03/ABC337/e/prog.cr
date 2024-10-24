@@ -23,7 +23,6 @@ def solve(io)
 end
 
 require "procon"
-
 require "procon/bit"
 
 solve(ProconIO.new)

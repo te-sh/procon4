@@ -52,9 +52,7 @@ def solve(io)
 end
 
 require "procon"
-
 require "procon/md_array"
-
 require "procon/graph/dijkstra"
 
 solve(ProconIO.new)

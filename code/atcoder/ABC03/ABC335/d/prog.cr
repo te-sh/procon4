@@ -46,7 +46,6 @@ def solve(io)
 end
 
 require "procon"
-
 require "procon/md_array"
 
 solve(ProconIO.new)
