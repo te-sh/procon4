@@ -15,6 +15,6 @@ def solve(io)
   io.put "YES"
 end
 
-require "procon/io"
+require "procon"
 
 solve(ProconIO.new)

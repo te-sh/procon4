@@ -1,8 +1,8 @@
 # URL: https://atcoder.jp/contests/abs/tasks/abc088_b
 
 def solve(io)
-  n = io.get(Int32)
-  a = io.get_a(n, Int32)
+  n = io.get
+  a = io.get_a(n)
   a = a.sort.reverse
   s1, s2 = 0, 0
   a.each_with_index do |ai, i|
@@ -15,6 +15,6 @@ def solve(io)
   io.put s1 - s2
 end
 
-require "procon/io"
+require "procon"
 
 solve(ProconIO.new)

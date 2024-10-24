@@ -12,6 +12,6 @@ def solve(io)
   io.put sum
 end
 
-require "procon/io"
+require "procon"
 
 solve(ProconIO.new)

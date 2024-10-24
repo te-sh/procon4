@@ -1,10 +1,10 @@
 # URL: https://atcoder.jp/contests/abs/tasks/abc087_b
 
 def solve(io)
-  a = io.get(Int32)
-  b = io.get(Int32)
-  c = io.get(Int32)
-  x = io.get(Int32)
+  a = io.get
+  b = io.get
+  c = io.get
+  x = io.get
 
   cnt = 0
   (0..a).each do |ai|
@@ -18,6 +18,6 @@ def solve(io)
   io.put cnt
 end
 
-require "procon/io"
+require "procon"
 
 solve(ProconIO.new)

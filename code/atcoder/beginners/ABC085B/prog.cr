@@ -1,11 +1,11 @@
 # URL: https://atcoder.jp/contests/abs/tasks/abc085_b
 
 def solve(io)
-  n = io.get(Int32)
-  d = io.get_c(n, Int32)
+  n = io.get
+  d = io.get_c(n)
   io.put d.uniq.size
 end
 
-require "procon/io"
+require "procon"
 
 solve(ProconIO.new)

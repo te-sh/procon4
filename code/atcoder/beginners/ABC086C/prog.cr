@@ -2,7 +2,7 @@
 
 def solve(io)
   n = io.get(Int32)
-  t, x, y = io.get_c(n, Int32, Int32, Int32)
+  t, x, y = io.get3_c(n, Int32, Int32, Int32)
   t.unshift(0)
   x.unshift(0)
   y.unshift(0)
@@ -18,6 +18,6 @@ def solve(io)
   io.put "Yes"
 end
 
-require "procon/io"
+require "procon"
 
 solve(ProconIO.new)

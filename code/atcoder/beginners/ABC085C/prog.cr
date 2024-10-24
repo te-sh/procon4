@@ -1,7 +1,7 @@
 # URL: https://atcoder.jp/contests/abs/tasks/abc085_c
 
 def solve(io)
-  n, y = io.get2(Int32)
+  n, y = io.get2
   y //= 1000
 
   (0..n).each do |a|
@@ -15,6 +15,6 @@ def solve(io)
   io.put_a [-1, -1, -1]
 end
 
-require "procon/io"
+require "procon"
 
 solve(ProconIO.new)

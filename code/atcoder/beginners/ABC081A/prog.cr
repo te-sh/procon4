@@ -5,6 +5,6 @@ def solve(io)
   io.put(s.count("1"))
 end
 
-require "procon/io"
+require "procon"
 
 solve(ProconIO.new)

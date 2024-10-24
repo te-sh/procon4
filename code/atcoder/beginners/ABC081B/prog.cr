@@ -1,8 +1,8 @@
 # URL: https://atcoder.jp/contests/abs/tasks/abc081_b
 
 def solve(io)
-  n = io.get(Int32)
-  a = io.get_a(n, Int32)
+  n = io.get
+  a = io.get_a(n)
   c = 0
   while a.all?(&.even?)
     c += 1
@@ -11,6 +11,6 @@ def solve(io)
   io.put c
 end
 
-require "procon/io"
+require "procon"
 
 solve(ProconIO.new)
