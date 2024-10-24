@@ -4,8 +4,8 @@ def solve(io)
   h, w = io.get2
   s = io.get_c(h, String)
 
-  b = Array.new_md(h+2, w+2, false)
-  c = Array.new_md(h+2, w+2, -1)
+  b = MdArray.new(h+2, w+2, false)
+  c = MdArray.new(h+2, w+2, -1)
   u = 0
   (0...h).each do |i|
     (0...w).each do |j|
@@ -51,6 +51,8 @@ end
 alias Mint = AtCoder::ModInt998244353
 
 require "procon"
+
+require "procon/md_array"
 
 require "atcoder/mod_int"
 

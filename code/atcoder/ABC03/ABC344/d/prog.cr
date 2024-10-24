@@ -6,7 +6,7 @@ def solve(io)
   t = io.get(String)
   n = io.get
 
-  dp = Array.new_md(n + 1, t.size + 1, MAX)
+  dp = MdArray.new(n + 1, t.size + 1, MAX)
   dp[0][0] = 0
 
   n.times do |i|
@@ -24,5 +24,7 @@ def solve(io)
 end
 
 require "procon"
+
+require "procon/md_array"
 
 solve(ProconIO.new)

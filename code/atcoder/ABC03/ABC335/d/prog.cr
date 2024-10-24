@@ -3,7 +3,7 @@
 def solve(io)
   n = io.get
 
-  b = Array.new_md(n+2, n+2, 0)
+  b = MdArray.new(n+2, n+2, 0)
   (0..n+1).each do |i|
     b[0][i] = n+1
     b[n+1][i] = n+1
@@ -46,5 +46,7 @@ def solve(io)
 end
 
 require "procon"
+
+require "procon/md_array"
 
 solve(ProconIO.new)

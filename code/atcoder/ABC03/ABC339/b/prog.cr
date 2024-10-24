@@ -2,7 +2,7 @@
 
 def solve(io)
   h, w, n = io.get3
-  m = Array.new_md(h, w, '.')
+  m = MdArray.new(h, w, '.')
 
   i = j = 0
   d = 'U'
@@ -60,5 +60,7 @@ def solve(io)
 end
 
 require "procon"
+
+require "procon/md_array"
 
 solve(ProconIO.new)

@@ -1,12 +1,12 @@
-# :::::::::::::::::::: procon/ext/array
+# :::::::::::::::::::: procon/md_array
 #
-# Array を拡張します
+# 多次元配列を生成するモジュールです
 #
-class Array
+module MdArray
   #
-  # 多次元配列を作成します
+  # 多次元配列を生成します
   #
-  macro new_md(*args, &block)
+  macro new(*args, &block)
     {% if !block %}
       {% for arg, i in args[0...-2] %}
         Array.new({{arg}}) {

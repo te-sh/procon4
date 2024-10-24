@@ -5,10 +5,10 @@ def solve(io)
   c, v = io.get2_c(n, Int32, Int64)
   sv = v.sum
 
-  dpv1 = Array.new_md(k+1, 2) { 0_i64 }
-  dpc1 = Array.new_md(k+1, 2) { 0 }
-  dpv2 = Array.new_md(k+1, 2) { 0_i64 }
-  dpc2 = Array.new_md(k+1, 2) { 0 }
+  dpv1 = MdArray.new(k+1, 2) { 0_i64 }
+  dpc1 = MdArray.new(k+1, 2) { 0 }
+  dpv2 = MdArray.new(k+1, 2) { 0_i64 }
+  dpc2 = MdArray.new(k+1, 2) { 0 }
   dpv1[0][0] = sv
   dpc1[0][0] = -1
 
@@ -63,5 +63,7 @@ def solve(io)
 end
 
 require "procon"
+
+require "procon/md_array"
 
 solve(ProconIO.new)

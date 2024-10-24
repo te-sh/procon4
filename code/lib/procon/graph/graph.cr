@@ -138,7 +138,7 @@ class GraphM(T)
   # inf は無限大の代用値です
   #
   def initialize(@size : Int32, @inf = 10**9)
-    @g = Array.new_md(@size, @size, @inf)
+    @g = Array.new(@size) { Array.new(@size, @inf) }
     @size.times do |i|
       @g[i][i] = T.zero
     end

@@ -37,7 +37,7 @@ def solve(io)
     wp.each do |wpi|
       wi = wpi.chars.map(&.to_i)
 
-      c = Array.new_md(h, w, 0)
+      c = MdArray.new(h, w, 0)
       h.times do |j|
         w.times do |k|
           c[j][k] = a[hi[j]][wi[k]]
@@ -52,6 +52,8 @@ def solve(io)
 end
 
 require "procon"
+
+require "procon/md_array"
 
 require "procon/graph/dijkstra"
 
