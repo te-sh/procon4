@@ -1,7 +1,7 @@
 # URL: https://atcoder.jp/contests/abs/tasks/abc083_b
 
 def solve(io)
-  n, a, b = io.get3(Int32)
+  n, a, b = io.get3
 
   sum = 0
   (1..n).each do |i|

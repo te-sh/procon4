@@ -2,7 +2,7 @@
 
 def solve(io)
   n = io.get
-  x, y = io.get2_c(n, Int32, Int32)
+  x, y = io.get2_c(n)
 
   sx, sy = x.sum, y.sum
 

@@ -1,8 +1,8 @@
 # URL: https://atcoder.jp/contests/abs/tasks/arc089_a
 
 def solve(io)
-  n = io.get(Int32)
-  t, x, y = io.get3_c(n, Int32, Int32, Int32)
+  n = io.get
+  t, x, y = io.get3_c(n)
   t.unshift(0)
   x.unshift(0)
   y.unshift(0)

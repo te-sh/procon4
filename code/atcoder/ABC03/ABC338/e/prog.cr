@@ -2,7 +2,7 @@
 
 def solve(io)
   n = io.get
-  a, b = io.get2_c(n, Int32, Int32)
+  a, b = io.get2_c(n)
 
   a.map!(&.- 1)
   b.map!(&.- 1)

@@ -2,7 +2,7 @@
 
 def solve(io)
   n = io.get
-  t, x = io.get2_c(n, Int32, Int32); x.map!(&.- 1)
+  t, x = io.get2_c(n); x.map!(&.- 1)
 
   s = Array.new(n) { [] of Int32 }
   r = Array.new(n) { 0 }

@@ -2,7 +2,7 @@
 
 def solve(io)
   n, k = io.get2
-  c, v = io.get2_c(n, Int32, Int64)
+  c, v = io.get_c(n, Int32, Int64)
   sv = v.sum
 
   dpv1 = MdArray.new(k+1, 2) { 0_i64 }
