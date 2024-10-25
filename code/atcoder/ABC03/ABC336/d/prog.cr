@@ -27,7 +27,6 @@ def solve(io)
 end
 
 require "procon"
-
 require "atcoder/seg_tree"
 
 solve(ProconIO.new)

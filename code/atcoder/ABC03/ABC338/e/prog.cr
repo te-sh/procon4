@@ -25,7 +25,6 @@ def solve(io)
 end
 
 require "procon"
-
 require "atcoder/fenwick_tree"
 
 solve(ProconIO.new)
