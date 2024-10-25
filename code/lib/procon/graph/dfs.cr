@@ -4,29 +4,32 @@ require "procon/graph/graph"
 #
 # DFS を実装します
 #
-class Dfs
+module Dfs
   alias Node = Graph::Node
+  alias NodePair = {Node, Node}
 
   #
-  # コンストラクタ
+  # Enumerator を作成するファクトリーです
   #
-  def initialize(@g : Graph)
-  end
+  struct Factory
+    #
+    # コンストラクタ
+    #
+    def initialize(@g : Graph)
+    end
 
-  #
-  # 頂点 u から DFS で頂点を列挙する Enumerator を返します
-  #
-  def run(u : Node)
-    Enumerator.new(@g, u)
+    #
+    # 頂点 u から DFS で頂点を列挙する Enumerator を返します
+    #
+    def run(u : Node)
+      Enumerator.new(@g, u)
+    end
   end
 
   #
   # DFS の経過を保持する Enumerator です
   #
   class Enumerator
-    alias Node = Graph::Node
-    alias NodePair = {Node, Node}
-
     include Enumerable(NodePair)
 
     #
@@ -41,7 +44,7 @@ class Dfs
     #
     def each(&)
       b = Array.new(@g.size, false)
-      q = Deque{NodePair.new(@u, -1)}
+      q = Deque{NodePair.new(@u, Graph::DUMMY_NODE)}
       b[@u] = true
       until q.empty?
         v, u = q.pop
@@ -58,7 +61,7 @@ end
 
 class Graph
   def dfs(s : Node)
-    Dfs.new(self).run(s)
+    Dfs::Factory.new(self).run(s)
   end
 end
 # ::::::::::::::::::::

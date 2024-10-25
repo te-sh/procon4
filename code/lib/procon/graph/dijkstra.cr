@@ -5,26 +5,30 @@ require "procon/data_structure/heap"
 #
 # Dijkstra 法を実装します
 #
-class Dijkstra(T)
+module Dijkstra(T)
   alias Node = GraphW::Node
   alias Edge = GraphW::Edge
-  DUMMY_NODE = -1
 
   #
-  # コンストラクタ
+  # Runner を作成するファクトリーです
   #
-  def initialize(@g : GraphW(T))
+  struct Factory(T)
+    #
+    # コンストラクタ
+    #
+    def initialize(@g : GraphW(T))
+    end
+
+    #
+    # Dijkstra 法を実行する Runner を返します
+    #
+    def run(s : Node)
+      Runner(T).new(@g).run(s)
+    end
   end
 
   #
-  # Dijkstra を実行する Runner を返します
-  #
-  def run(s : Node)
-    Runner(T).new(@g).run(s)
-  end
-
-  #
-  # Dijkstra を実行する Runner です
+  # Dijkstra 法を実行する Runner です
   #
   class Runner(T)
     #
@@ -33,7 +37,7 @@ class Dijkstra(T)
     def initialize(@g : GraphW(T))
       size = @g.size
       @dist = Array.new(size, @g.inf)
-      @prev = Array.new(size, DUMMY_NODE)
+      @prev = Array.new(size, GraphW::DUMMY_NODE)
     end
 
     #
@@ -41,13 +45,13 @@ class Dijkstra(T)
     #
     def run(s : Node)
       @dist[s] = T.additive_identity
-      se = Edge.new(DUMMY_NODE, s, T.new(0))
+      se = Edge.new(GraphW::DUMMY_NODE, s, T.new(0))
       h = Heap.new([se]) { |a, b| a.wt <=> b.wt }
 
       until h.empty?
         e = h.pop
       
-        next if @prev[e.dst] != DUMMY_NODE
+        next if @prev[e.dst] != GraphW::DUMMY_NODE
         @prev[e.dst] = e.src
       
         @g[e.dst].each do |f|
@@ -75,7 +79,7 @@ end
 
 class GraphW(T)
   def dijkstra(s : Node)
-    Dijkstra.new(self).run(s)
+    Dijkstra::Factory.new(self).run(s)
   end
 end
 # ::::::::::::::::::::

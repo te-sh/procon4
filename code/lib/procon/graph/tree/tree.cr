@@ -5,28 +5,31 @@ require "procon/graph/dfs"
 #
 # 木を実装します
 #
-class Tree
+module Tree
   alias Node = Graph::Node
 
   #
-  # コンストラクタ
+  # Parser を作成するファクトリーです
   #
-  def initialize(@g : Graph)
-  end
+  struct Factory
+    #
+    # コンストラクタ
+    #
+    def initialize(@g : Graph)
+    end
   
-  #
-  # 木のパーサを返します
-  #
-  def parse(root : Node)
-    Parser.new(@g, root).parse
+    #
+    # 木のパーサを返します
+    #
+    def parse(root : Node)
+      Parser.new(@g, root).parse
+    end
   end
 
   #
-  # 木を作成するパーサです
+  # 木を作成する Parser です
   #
   class Parser
-    alias Node = Graph::Node
-
     #
     # コンストラクタ
     #
@@ -97,7 +100,7 @@ end
 
 class Graph
   def tree(root : Node)
-    Tree.new(self).parse(root)
+    Tree::Factory.new(self).parse(root)
   end
 end
 # ::::::::::::::::::::

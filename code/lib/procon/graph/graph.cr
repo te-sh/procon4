@@ -5,6 +5,7 @@
 #
 class Graph
   alias Node = Int32
+  DUMMY_NODE = -1
 
   #
   # コンストラクタ

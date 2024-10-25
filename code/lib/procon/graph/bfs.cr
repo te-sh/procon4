@@ -4,29 +4,32 @@ require "procon/graph/graph"
 #
 # BFS を実装します
 #
-class Bfs
+module Bfs
   alias Node = Graph::Node
+  alias NodePair = {Node, Node}
 
   #
-  # コンストラクタ
+  # Enumerator を作成するファクトリーです
   #
-  def initialize(@g : Graph)
-  end
+  struct Factory
+    #
+    # コンストラクタ
+    #
+    def initialize(@g : Graph)
+    end
 
-  #
-  # 頂点 u から BFS で頂点を列挙する Enumerator を返します
-  #
-  def run(u : Node)
-    Enumerator.new(@g, u)
+    #
+    # 頂点 u から BFS で頂点を列挙する Enumerator を返します
+    #
+    def run(u : Node)
+      Enumerator.new(@g, u)
+    end
   end
 
   #
   # BFS の経過を保持する Enumerator です
   #
   class Enumerator
-    alias Node = Graph::Node
-    alias NodePair = {Node, Node}
-
     include Enumerable(NodePair)
 
     #
@@ -41,7 +44,7 @@ class Bfs
     #
     def each(&)
       b = Array.new(@g.size, false)
-      q = Deque{NodePair.new(@u, -1)}
+      q = Deque{NodePair.new(@u, Graph::DUMMY_NODE)}
       b[@u] = true
       until q.empty?
         v, u = q.shift
@@ -58,7 +61,7 @@ end
 
 class Graph
   def bfs(s : Node)
-    Bfs.new(self).run(s)
+    Bfs::Factory.new(self).run(s)
   end
 end
 # ::::::::::::::::::::
