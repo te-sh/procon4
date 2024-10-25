@@ -2,7 +2,7 @@
 require "procon/graph/graph"
 
 #
-# BFS を行う構造体です
+# DFS を実装します
 #
 class Dfs
   alias Node = Graph::Node

@@ -3,7 +3,7 @@ require "procon/graph/graph"
 require "procon/graph/dfs"
 
 #
-# 木を表します
+# 木を実装します
 #
 class Tree
   alias Node = Graph::Node
@@ -20,7 +20,10 @@ class Tree
   def parse(root : Node)
     Parser.new(@g, root).parse
   end
-  
+
+  #
+  # 木を作成するパーサです
+  #
   class Parser
     alias Node = Graph::Node
 
