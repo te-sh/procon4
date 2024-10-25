@@ -2,7 +2,7 @@
 
 def solve(io)
   x = io.get(Int64)
-  io.put x.cdiv(10)
+  io.put cdiv(x, 10)
 end
 
 require "procon"
