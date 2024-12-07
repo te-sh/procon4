@@ -67,4 +67,5 @@ class GraphW(T)
     @g[v] << Edge.new(v, u, wt)
   end
 end
+
 # ::::::::::::::::::::

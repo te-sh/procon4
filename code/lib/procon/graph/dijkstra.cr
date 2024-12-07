@@ -1,4 +1,5 @@
 # :::::::::::::::::::: procon/graph/dijkstra
+
 require "procon/graph/graph_w"
 require "procon/data_structure/heap"
 
@@ -82,4 +83,5 @@ class GraphW(T)
     Dijkstra::Factory.new(self).run(s)
   end
 end
+
 # ::::::::::::::::::::

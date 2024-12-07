@@ -1,4 +1,5 @@
 # :::::::::::::::::::: procon/data_structure/cumulative_sum
+
 #
 # 累積和を表します
 #
@@ -39,4 +40,5 @@ class CumulativeSum(T)
 
   @s : Array(T)
 end
+
 # ::::::::::::::::::::

@@ -1,4 +1,5 @@
 # :::::::::::::::::::: procon/graph/dfs
+
 require "procon/graph/graph"
 
 #
@@ -64,4 +65,5 @@ class Graph
     Dfs::Factory.new(self).run(s)
   end
 end
+
 # ::::::::::::::::::::

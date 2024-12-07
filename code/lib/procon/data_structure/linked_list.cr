@@ -1,4 +1,5 @@
 # :::::::::::::::::::: procon/data_structure/linked_list
+
 #
 # 双方向の LinkedList を表します
 #
@@ -105,4 +106,5 @@ class LinkedList(T)
     @succ : Node(T) | Nil
   end
 end
+
 # ::::::::::::::::::::

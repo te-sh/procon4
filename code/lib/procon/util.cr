@@ -1,4 +1,5 @@
 # :::::::::::::::::::: procon/util
+
 #
 # a = {a, b}.min を計算します
 #
@@ -26,4 +27,5 @@ end
 macro records(rec, a)
   {{a}}.map { |v| {{rec}}.new(*v) }
 end
+
 # ::::::::::::::::::::

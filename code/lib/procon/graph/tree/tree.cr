@@ -1,4 +1,5 @@
 # :::::::::::::::::::: lib/graph/tree/tree
+
 require "procon/graph/graph"
 require "procon/graph/dfs"
 
@@ -103,4 +104,5 @@ class Graph
     Tree::Factory.new(self).parse(root)
   end
 end
+
 # ::::::::::::::::::::

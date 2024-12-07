@@ -1,4 +1,5 @@
 # :::::::::::::::::::: procon/data_structure/heap
+
 #
 # ヒープ構造を表します
 #
@@ -105,4 +106,5 @@ class Heap(T)
 
   @b : Array(T)
 end
+
 # ::::::::::::::::::::

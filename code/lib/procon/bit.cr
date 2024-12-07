@@ -1,4 +1,5 @@
 # :::::::::::::::::::: procon/bit
+
 #
 # Int のビット関連の拡張です
 #
@@ -75,4 +76,5 @@ class BitSupersetsEnumerator(T)
     end
   end
 end
+
 # ::::::::::::::::::::

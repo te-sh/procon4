@@ -1,4 +1,5 @@
 # :::::::::::::::::::: procon/data_structure/union-find
+
 #
 # Union-Find を表します
 #
@@ -59,4 +60,5 @@ class UnionFind
   @p : Array(Int32)
   @cn : Array(Int32)
 end
+
 # ::::::::::::::::::::

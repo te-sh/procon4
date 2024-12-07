@@ -1,4 +1,5 @@
 # :::::::::::::::::::: procon/graph/bfs
+
 require "procon/graph/graph"
 
 #
@@ -64,4 +65,5 @@ class Graph
     Bfs::Factory.new(self).run(s)
   end
 end
+
 # ::::::::::::::::::::
