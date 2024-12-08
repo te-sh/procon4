@@ -61,6 +61,9 @@ module Dfs
 end
 
 class Graph
+  #
+  # 頂点 u から DFS で頂点を列挙する Enumerator を返します
+  #
   def dfs(s : Node)
     Dfs::Factory.new(self).run(s)
   end

@@ -61,6 +61,9 @@ module Bfs
 end
 
 class Graph
+  #
+  # 頂点 s から BFS で頂点を列挙する Enumerator を返します
+  #
   def bfs(s : Node)
     Bfs::Factory.new(self).run(s)
   end
