@@ -16,5 +16,6 @@ def calc(memo : Hash(Int64, Int64), x : Int64) : Int64
 end
 
 require "procon"
+require "procon/math/misc"
 
 solve(ProconIO.new)

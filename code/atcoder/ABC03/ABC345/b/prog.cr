@@ -6,5 +6,6 @@ def solve(io)
 end
 
 require "procon"
+require "procon/math/misc"
 
 solve(ProconIO.new)
